@@ -1,0 +1,272 @@
+{
+	"common": {
+    "title": "Contentos 钱包",
+    "language": "简体中文",
+    "emptyText": "还没有数据哦~",
+    "loadingText": "加载中，请稍候...",
+    "netErrorText": "网络错误，请稍候重试",
+    "toastLoading": "加载中",
+    "toastOperateLoading": "操作中",
+    "copySuccess": "已复制至剪贴板！",
+    "copyFailed": "复制失败!",
+    "back": "返回",
+		"copy": "复制",
+		"ok": "OK",
+		"explorer": "浏览器",
+		"lock": "锁定",
+		"refresh": "刷新",
+		"cancel": "取消",
+		"next": "下一步",
+		"confirm": "确认",
+		"delete": "删除",
+		"setDefault": "设为默认",
+		"modify": "修改",
+		"copyAddress": "复制地址",
+		"export": "导出私钥",
+    "balance": "余额"
+	},
+	"nav": {
+		"welcome": "欢迎",
+    "setting": "设置",
+		"setPassword": "设置密码",
+		"createAccount": "创建账户",
+		"importAccount": "导入账户",
+		"lockAccount": "请先解锁",
+		"home": "钱包",
+		"transfer": "转账",
+		"receive": "收款",
+		"exchange": "转换",
+		"history": "记录",
+		"accountList": "账户列表",
+		"transferConfirm": "转账确认",
+		"contractConfirm": "合约确认",
+		"postConfirm": "发布确认",
+		"voteConfirm": "投票确认",
+		"signMessage": "签名",
+		"network": "网络",
+		"dappWhiteList": "Dapp 白名单",
+		"voteBp": "投票",
+		"language": "语言",
+		"changePassword": "修改密码",
+		"lockTime": "锁定时间",
+		"aboutUs": "关于我们"
+	},
+	"components": {
+		"account": "账户",
+		"addNetwork": "添加网络",
+		"modifyNetwork": "修改网络",
+    "warning": "提示",
+    "createAccountWarning": "帐户与助记词不匹配，或者你已经将此帐户绑定到<b>cos.tv</b>？你可以解除帐户绑定后再次访问钱包。别担心，你的账户是安全的！",
+		"gotoUnbind": "去解绑",
+		"noWaitingWithdraw": "无等待撤回请求",
+		"userCancelled": "用户取消",
+    "warnMnemonicTips": "写下助记词或将其保存到脱机U盘中",
+		"warnPrivateKeyTips": "写下私钥或将其保存到脱机U盘中",
+    "dontInputPublic": "输入时注意环境安全",
+		"passwordRule": "密码介于6到20个字符之间"
+	},
+	"create": {
+		"enterUsername": "账户名称：",
+		"userNameTips": "请输入账户名称",
+		"userNameRule": "介于6到16个字符之间，只允许小写字母和数字",
+		"mnemonic": "助记词：",
+		"privateKey": "私钥：",
+		"inputMnemonic": "输入生成的助记词：",
+		"inputPrivateKey": "输入生成的私钥：",
+		"verify": "验证",
+		"verifyMnemonic": "助记词验证",
+		"verifyPrivateKey": "私钥验证",
+		"enterUsernameTips": "请输入账户名称",
+		"usernameRuleTips": "账户名称介于6到16个字符之间",
+		"usernameRepeat": "账户名称已被占用",
+		"enterMnemonic": "请输入助记词",
+		"mnemonicNotMatch": "助记词不匹配",
+		"enterPrivateKey": "请输入私钥",
+		"privateKeyNotMatch": "私钥不匹配",
+    "createAccountFailed": "创建账户失败"
+	},
+	"import": {
+		"enterYourName": "账户名称：",
+		"nameRule": "介于6到16个字符之间",
+		"enterYourMnemonic": "助记词：",
+		"enterYourPrivateKey": "私钥：",
+		"usingMnemonic": "用助记词导入",
+    "usingPrivateKey": "用私钥导入"
+	},
+	"lock": {
+		"enterPassword": "请输入密码",
+    "unlock": "解锁账户"
+	},
+	"password": {
+		"warnTips": "Contentos Wallet 不存储钱包密码，也无法帮您找回，请务必牢记！",
+		"placeholder": "请输入6~20个字符",
+		"title": "密码：",
+		"confirmTitle": "确认密码：",
+		"repeatPassword": "重复密码",
+		"passwordTips": "请输入密码",
+		"inconsistent": "两次密码不一致"
+	},
+	"welcome": {
+		"accountNone": "我还没有 Contentos 帐户",
+		"haveAccount": "我有 Contentos 帐户",
+		"createAccount": "创建账户",
+    "importAccount": "导入账户"
+	},
+	"contract": {
+		"caller": "调用者：",
+		"owner": "合约所有者：",
+		"title": "合约：",
+		"payment": "支付：",
+		"balance": "余额：",
+		"arguments": "参数：",
+		"enableWhitelist": "添加合约到白名单",
+    "whitelistTips": "如您将这个合约加入白名单，代表您允许您的账号在同一网站发起同一合约请求给同一收款方的情况下，直接给予签名，而不再进行手动授权",
+    "whitelistTips1": "合约在白名单中，将自动执行！"
+	},
+	"post": {
+		"account": "账户：",
+		"title": "标题：",
+		"content": "内容：",
+		"tags": "标签："
+	},
+	"sign": {
+		"message": "内容："
+	},
+	"transfer": {
+		"fromAccount": "转出账户：",
+		"toAccount": "接收账户：",
+		"amount": "数量：",
+		"memo": "备注：",
+		"optional": "可填",
+		"confirm": "确认转账",
+		"success": "转账成功",
+    "failed": "转账失败"
+	},
+	"vote": {
+		"voter": "投票者：",
+		"bpName": "Bp 名称：",
+		"operate": "操作：",
+		"cancelVote": "取消投票",
+		"title": "投票"
+	},
+	"aboutus": {
+		"links": "链接",
+		"followUs": "关注我们",
+		"offical": "官网",
+		"explorer": "浏览器",
+		"github": "Github",
+		"telegram": "电报",
+		"medium": "Medium",
+		"facebook": "脸书",
+    "twitter": "推特"	
+	},
+	"bpvote": {
+		"votedTips": "你投票给了：",
+    "voteTips": "你没有投票给任何人",
+		"cancelVote": "取消投票",
+		"vote": "投票",
+		"voters": "票数",
+		"vestVotes": "投票 Vest",
+		"blocks": "出块数",
+		"website": "网站",
+    "voteFailed": "投票失败"
+	},
+	"changepassword": {
+		"currentPassword": "当前密码：",
+		"enterPassword": "请输入当前密码",
+		"newPassword": "新密码：",
+		"confirmPassword": "请重复新密码：",
+		"repeatPassword": "请再次输入密码",
+		"change": "修改密码",
+		"passwordTips": "当前密码不能为空",
+		"passwordRule": "当前密码介于6到20个字符之间",
+		"newPasswordTips": "新密码不能为空",
+		"newPasswordRule": "新密码介于6到20个字符之间",
+		"inconsistent": "两次密码不一致",
+		"success": "密码修改成功!"
+	},
+	"whitelist": {
+		"network": "网络：",
+		"noRecords": "没有记录"
+	},
+	"locktime": {
+		"1min": "1 分钟",
+		"5min": "5 分钟",
+		"10min": "10 分钟",
+		"30min": "30 分钟",
+		"1hour": "1 小时",
+    "never": "从不"
+	},
+	"network": {
+		"setDefault": "设置默认",
+		"secure": "安全的网络",
+		"type": "网络类型",
+		"main": "主网",
+		"test": "测试网",
+		"title": "网络标题",
+		"rpcAddress": "RPC 地址",
+		"titleTips": "请输入网络挑剔",
+		"rpcTips": "请输入RPC地址",
+		"duplication": "网络标题重复"
+	},
+	"setting": {
+		"account": "管理账户",
+		"network": "修改网络",
+		"dappWhitelist": "Dapp 白名单",
+		"bpVote": "投票",
+		"language": "修改语言",
+		"password": "修改密码",
+		"lockTime": "自动锁定时间",
+		"aboutUs": "关于我们"
+	},
+	"exchange": {
+		"account": "当前账户：",
+		"type": "转换类型：",
+		"inputAmount": "请输入数量",
+		"vestBalance": "Vest 余额：",
+		"chickenBalance": "Chicken 余额：",
+		"stamina": "Stamina：",
+		"recipientAccount": "接收账户",
+		"convert": "转换",
+    "remainVest": "等待转换的Vest",
+		"eachTimeVest": "每次转换",
+    "nextTime": "下一次转换时间",
+		"cosToVest": "COS 到 Vest",
+		"vestToCos": "Vest 到 COS",
+		"cosToStake": "COS 到 Chicken",
+		"stakeToCos": "Chicken 到 COS",
+		"amountTips": "请输入接收账户",
+		"enterAmount": "请输入数量",
+		"convertRule": "转换数量必须大于 1 COS",
+		"success": "转换成功",
+		"openExplorer": "打开浏览器",
+		"failed": "转换失败"
+	},
+	"history": {
+		"all": "全部",
+		"transfer": "转账",
+		"vote": "投票",
+		"postReply": "文章",
+		"success": "成功",
+    "failedDeducted": "失败但体力已消耗",
+		"failed": "失败",
+    "seeMore": "在浏览器查看更多"
+	},
+	"home": {
+		"receive": "收款",
+		"transfer": "转账",
+		"history": "记录",
+		"left": "剩余",
+		"networkError": "网络错误"
+	},
+	"list": {
+		"notFound": "找不到账户",
+    "delteConfirm": "确认要删除账户 {account} ？",
+		"inputPassword": "请输入密码",
+		"exportTitle": "导出私钥",
+    "exportTips": "私钥未加密，泄露风险极高。请把它放在安全的地方！"
+	},
+	"receive": {
+    "tips": "此地址仅接受<b>COS</b>链上的Token"
+	}
+}

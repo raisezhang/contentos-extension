@@ -1,0 +1,46 @@
+html, body {
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+}
+
+body, button, input, select, textarea {
+  font: 12px/1.5 Avenir,Helvetica,Arial,sans-serif;
+  -ms-text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;
+  text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;
+  color: #666;
+}
+
+a, a:hover, a:active, a:focus {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+#app {
+  width: 360px;
+  height: 600px;
+  margin: 0 auto;
+  box-shadow: .1rem .1rem .3rem rgba(0, 0, 0, .16);
+  position: relative;
+}
+
+@media screen and (min-height: 601px) {
+  #app {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 361px) and (min-height: 601px) {
+  #app {
+    height: 640px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

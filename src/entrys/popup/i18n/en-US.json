@@ -1,0 +1,272 @@
+{
+	"common": {
+		"title": "Contentos Wallet",
+		"language": "English",
+		"emptyText": "No data yet",
+		"loadingText": "Loading, please wait...",
+		"netErrorText": "Network error, please try again later",
+		"toastLoading": "Loading",
+		"toastOperateLoading": "Operating",
+		"copySuccess": "Copyed to clipboard!",
+		"copyFailed": "Copy failed!",
+		"back": "Back",
+		"copy": "Copy",
+		"ok": "OK",
+		"explorer": "Explorer",
+		"lock": "Lock",
+		"refresh": "Refresh",
+		"cancel": "Cancel",
+		"next": "Next",
+		"confirm": "Confirm",
+		"delete": "Delete",
+		"setDefault": "Set Default",
+		"modify": "Modify",
+		"copyAddress": "Copy Address",
+		"export": "Export Private Key",
+		"balance": "Balance"
+	},
+	"nav": {
+		"welcome": "Welcome",
+		"setting": "Setting",
+		"setPassword": "Set Password",
+		"createAccount": "Create Account",
+		"importAccount": "Import Account",
+		"lockAccount": "Lock Account",
+		"home": "Wallet",
+		"transfer": "Transfer",
+		"receive": "Receive",
+		"exchange": "Exchange",
+		"history": "History",
+		"accountList": "Account List",
+		"transferConfirm": "Transfer Confirm",
+		"contractConfirm": "Contract Confirm",
+		"postConfirm": "Post Confirm",
+		"voteConfirm": "Vote Confirm",
+		"signMessage": "Sign Message",
+		"network": "Network",
+		"dappWhiteList": "Dapp White List",
+		"voteBp": "Vote For Bp",
+		"language": "Language",
+		"changePassword": "Change Password",
+		"lockTime": "Lock Time",
+		"aboutUs": "About Us"
+	},
+	"components": {
+		"account": "Account",
+		"addNetwork": "Add Network",
+		"modifyNetwork": "Modify Network",
+		"warning": "Warning",
+		"createAccountWarning": "Account does not match with the mnemonic. Or perhaps you already binded this Account to <b>cos.tv</b>? You can unbind the Account to access the wallet again. Don't worry, your fund is SAFE.",
+		"gotoUnbind": "Go to unbind",
+		"noWaitingWithdraw": "No Waiting Withdraw Request",
+		"userCancelled": "User cancelled",
+		"warnMnemonicTips": "Write mnemonic down or save it into a offline usb flash disk.",
+		"warnPrivateKeyTips": "Write private key down or save it into a offline usb flash disk.",
+		"dontInputPublic": "Do NOT input in public",
+		"passwordRule": "Password between 6 and 20 characters"
+	},
+	"create": {
+		"enterUsername": "Enter a username：",
+		"userNameTips": "Username in coschain",
+		"userNameRule": "Between 6 and 16 characters, only lower letters and numbers are allowed.",
+		"mnemonic": "Mnemonic：",
+		"privateKey": "Private Key：",
+		"inputMnemonic": "Input Generated Mnemonic：",
+		"inputPrivateKey": "Input Generated Private Key：",
+		"verify": "Verify",
+		"verifyMnemonic": "Verify Mnemonic",
+		"verifyPrivateKey": "Verify Private Key",
+		"enterUsernameTips": "Please enter your username",
+		"usernameRuleTips": "Username between 6 and 16 characters",
+		"usernameRepeat": "The username has been occupied",
+		"enterMnemonic": "Please enter your mnemonic",
+		"mnemonicNotMatch": "Mnemonic doesn't match",
+		"enterPrivateKey": "Please enter your private key",
+		"privateKeyNotMatch": "Private key doesn't match",
+		"createAccountFailed": "Create Account Failed"
+	},
+	"import": {
+		"enterYourName": "Enter your username：",
+		"nameRule": "Between 6 and 16 characters",
+		"enterYourMnemonic": "Enter your mnemonic：",
+		"enterYourPrivateKey": "Enter your private key：",
+		"usingMnemonic": "Using Mnemonic",
+		"usingPrivateKey": "Using Private Key"
+	},
+	"lock": {
+		"enterPassword": "Please Enter Password",
+		"unlock": "Unlock Account"
+	},
+	"password": {
+		"warnTips": "Contentos wallet doesn't store the wallet password and can't help you find it. Please remember!",
+		"placeholder": "Please enter 6~20 characters",
+		"title": "Password：",
+		"confirmTitle": "Confirm Password：",
+		"repeatPassword": "Input password again",
+		"passwordTips": "Please enter passwrod",
+		"inconsistent": "Two passwords are inconsistent"
+	},
+	"welcome": {
+		"accountNone": "I don't have a Contentos account",
+		"haveAccount": "I have a Contentos account",
+		"createAccount": "Create a new account",
+		"importAccount": "Import an account"
+	},
+	"contract": {
+		"caller": "Caller：",
+		"owner": "Contract Owner：",
+		"title": "Contract：",
+		"payment": "Payment：",
+		"balance": "Balance：",
+		"arguments": "Arguments：",
+		"enableWhitelist": "Enable this contract to Whitelist",
+		"whitelistTips": "If you add this contract to the white-list, it will allow you to sign directly when you initiate the same contract request to the same beneficiary, manual operation will be no longer applied.",
+		"whitelistTips1": "This contract is on the Whitelist"
+	},
+	"post": {
+		"account": "Account：",
+		"title": "Title：",
+		"content": "Content：",
+		"tags": "Tags："
+	},
+	"sign": {
+		"message": "Message："
+	},
+	"transfer": {
+		"fromAccount": "From Account：",
+		"toAccount": "To Account：",
+		"amount": "Amount：",
+		"memo": "Memo：",
+		"optional": "Optional",
+		"confirm": "Confirm Transfer",
+		"success": "Transfer Success",
+		"failed": "Transfer Failed"
+	},
+	"vote": {
+		"voter": "Voter：",
+		"bpName": "Bp Name：",
+		"operate": "Operate：",
+		"cancelVote": "Cancel Vote",
+		"title": "Vote"
+	},
+	"aboutus": {
+		"links": "Links",
+		"followUs": "Follow Us",
+		"offical": "Offical",
+		"explorer": "Explorer",
+		"github": "Github",
+		"telegram": "Telegram",
+		"medium": "Medium",
+		"facebook": "Facebook",
+		"twitter": "Twitter"	
+	},
+	"bpvote": {
+		"votedTips": "You have voted to block producer：",
+		"voteTips": "You haven't voted to anyone.",
+		"cancelVote": "Cancel Vote",
+		"vote": "Vote",
+		"voters": "Voters",
+		"vestVotes": "Vest Votes",
+		"blocks": "Produced Blocks",
+		"website": "Website",
+		"voteFailed": "Vote Failed"
+	},
+	"changepassword": {
+		"currentPassword": "Current Password：",
+		"enterPassword": "Enter current password",
+		"newPassword": "New Password：",
+		"confirmPassword": "Confirm Password：",
+		"repeatPassword": "Input password again",
+		"change": "Change Password",
+		"passwordTips": "Current password is required.",
+		"passwordRule": "Current password between 6 and 20 characters.",
+		"newPasswordTips": "New password is required.",
+		"newPasswordRule": "New password between 6 and 20 characters",
+		"inconsistent": "Two passwords are inconsistent",
+		"success": "Password change success!"
+	},
+	"whitelist": {
+		"network": "Network：",
+		"noRecords": "No Records"
+	},
+	"locktime": {
+		"1min": "1 min",
+		"5min": "5 min",
+		"10min": "10 min",
+		"30min": "30 min",
+		"1hour": "1 Hour",
+		"never": "Never"
+	},
+	"network": {
+		"setDefault": "Set Default",
+		"secure": "Secure Network",
+		"type": "Network Type",
+		"main": "Main Net",
+		"test": "Test Net",
+		"title": "Network Title",
+		"rpcAddress": "RPC Address",
+		"titleTips": "Please enter network title",
+		"rpcTips": "Please enter RPC address",
+		"duplication": "Duplication of network title"
+	},
+	"setting": {
+		"account": "Manage Account",
+		"network": "Change Network",
+		"dappWhitelist": "Dapp White List",
+		"bpVote": "Bp Vote",
+		"language": "Change Language",
+		"password": "Change Password",
+		"lockTime": "Auto Lock Time",
+		"aboutUs": "About Us"
+	},
+	"exchange": {
+		"account": "Current Account：",
+		"type": "Exchange Type：",
+		"inputAmount": "Input Amount",
+		"vestBalance": "Vest Balance：",
+		"chickenBalance": "Chicken Balance：",
+		"stamina": "Current Stamina：",
+		"recipientAccount": "Recipient Account",
+		"convert": "Convert",
+		"remainVest": "Remain Vest Waiting Conversion",
+		"eachTimeVest": "Each Time To Convert",
+		"nextTime": "Next Convert Datetime",
+		"cosToVest": "COS to Vest",
+		"vestToCos": "Vest to COS",
+		"cosToStake": "COS to Chicken",
+		"stakeToCos": "Chicken to COS",
+		"amountTips": "Please enter recipient account",
+		"enterAmount": "Please enter amount",
+		"convertRule": "Convert must greater than 1 COS",
+		"success": "Exchange Success",
+		"openExplorer": "Open Explorer",
+		"failed": "Exchange Failed"
+	},
+	"history": {
+		"all": "All",
+		"transfer": "Transfer",
+		"vote": "Vote",
+		"postReply": "Post/Reply",
+		"success": "Success",
+		"failedDeducted": "Fail But Deducted Stamina",
+		"failed": "Failed",
+		"seeMore": "See More In Explorer"
+	},
+	"home": {
+		"receive": "Receive",
+		"transfer": "Transfer",
+		"history": "History",
+		"left": "Left",
+		"networkError": "Network Error"
+	},
+	"list": {
+		"notFound": "Can not find account",
+		"delteConfirm": "Are you confirm you want to delete account {account} ？",
+		"inputPassword": "Input Password",
+		"exportTitle": "Export Private Key",
+		"exportTips": "The private key is not encrypted and the risk of disclosure is extremely high. Please keep it in a safe place."
+	},
+	"receive": {
+		"tips": "This address only accept tokens on <b>COS</b> blockchain"
+	}
+}
