@@ -62,11 +62,12 @@ export default {
         const { account } = item;
         accountInfo(account).then(res => {
           if (res && res.info) {
+            const stamina = res.info.staminaFreeRemain + res.info.staminaStakeRemain;
             this.$set(this.balances, index, {
               balance: formatDecimal(res.info.coin.value / 1e6, 6),
               vest: formatDecimal(res.info.vest.value / 1e6, 6),
-              stamina: res.info.staminaFreeRemain + res.info.staminaStakeRemain,
-              percent: Math.min((this.$root.userData.stamina / res.info.staminaMax) * 100, 100).toFixed(2),
+              percent: Math.min((stamina / res.info.staminaMax) * 100, 100).toFixed(2),
+              stamina,
             });
           } else {
             this.$set(this.balances, index, {

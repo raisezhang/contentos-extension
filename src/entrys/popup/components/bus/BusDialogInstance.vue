@@ -1,6 +1,6 @@
 <!--
 
-How To User:
+How To Use:
 
 this.$root.dialogData = {
   title: 'Warning',

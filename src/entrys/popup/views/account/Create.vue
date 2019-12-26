@@ -62,7 +62,7 @@ export default {
       privateKey: '',
       publicKey: '',
       stepIndex: 0,
-      importTypes: [this.$t('create.verifyMnemonic'), this.$t('create.verifyMnemonic')],
+      importTypes: [this.$t('create.verifyMnemonic'), this.$t('create.verifyPrivateKey')],
       importTypeIndex: 0,
       confirmMnemonic: '',
       confirmPrivateKey: '',
