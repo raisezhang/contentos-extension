@@ -23,7 +23,9 @@
 		"modify": "Modify",
 		"copyAddress": "Copy Address",
 		"export": "Export Private Key",
-		"balance": "Balance"
+		"balance": "Balance",
+		"mnemonic": "Mnemonic",
+		"privateKey": "Private Key"
 	},
 	"nav": {
 		"welcome": "Welcome",
@@ -56,7 +58,7 @@
 		"addNetwork": "Add Network",
 		"modifyNetwork": "Modify Network",
 		"warning": "Warning",
-		"createAccountWarning": "Account does not match with the mnemonic. Or perhaps you already binded this Account to <b>cos.tv</b>? You can unbind the Account to access the wallet again. Don't worry, your fund is SAFE.",
+		"createAccountWarning": "Account does not match with the {type}. Or perhaps you already binded this Account to <b>cos.tv</b>? You can unbind the Account to access the wallet again. Don't worry, your fund is SAFE.",
 		"gotoUnbind": "Go to unbind",
 		"noWaitingWithdraw": "No Waiting Withdraw Request",
 		"userCancelled": "User cancelled",

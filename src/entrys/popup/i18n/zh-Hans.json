@@ -23,7 +23,9 @@
 		"modify": "修改",
 		"copyAddress": "复制地址",
 		"export": "导出私钥",
-    "balance": "余额"
+		"balance": "余额",
+		"mnemonic": "助记词",
+		"privateKey": "私钥"
 	},
 	"nav": {
 		"welcome": "欢迎",
@@ -56,7 +58,7 @@
 		"addNetwork": "添加网络",
 		"modifyNetwork": "修改网络",
     "warning": "提示",
-    "createAccountWarning": "帐户与助记词不匹配，或者你已经将此帐户绑定到<b>cos.tv</b>？你可以解除帐户绑定后再次访问钱包。别担心，你的账户是安全的！",
+    "createAccountWarning": "帐户与{type}不匹配，或者你已经将此帐户绑定到<b>cos.tv</b>？你可以解除帐户绑定后再次访问钱包。别担心，你的账户是安全的！",
 		"gotoUnbind": "去解绑",
 		"noWaitingWithdraw": "无等待撤回请求",
 		"userCancelled": "用户取消",
@@ -162,7 +164,7 @@
 	},
 	"bpvote": {
 		"votedTips": "你投票给了：",
-    "voteTips": "你没有投票给任何人",
+    "voteTips": "你还没有投票给任何人",
 		"cancelVote": "取消投票",
 		"vote": "投票",
 		"voters": "票数",

@@ -18,10 +18,10 @@ export default {
         this.$router.replace('/');
       }
     },
-    showBindWarningDialog() {
+    showBindWarningDialog(type) {
       this.$root.dialogData = {
         title: this.$t('components.warning'),
-        content: this.$t('components.createAccountWarning'),
+        content: this.$t('components.createAccountWarning', { type }),
         cancelText: this.$t('common.cancel'),
         confirmText: this.$t('components.gotoUnbind'),
         onConfirm: () => {

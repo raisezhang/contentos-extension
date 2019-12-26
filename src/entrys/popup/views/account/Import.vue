@@ -75,7 +75,7 @@ export default {
         if (ex.code === 10002) {
           this.toast(ex.message);
         } else {
-          this.showBindWarningDialog();
+          this.showBindWarningDialog(this.importTypeIndex === 0 ? this.$t('common.mnemonic') : this.$t('common.privateKey'));
         }
         return;
       } finally {
