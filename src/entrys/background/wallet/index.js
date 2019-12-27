@@ -63,8 +63,10 @@ async function storeWallet(wallet, password) {
     const { list, selected } = state.network;
     const currentNetwork = list[selected].key;
     if (network !== currentNetwork) {
+      const filterNetwork = list.filter(item => item.key === network);
+      const { id } = filterNetwork[0] || list[0];
       // eslint-disable-next-line
-      await methods.changeNetworkSelected({ id: list[network === 'test' ? 1 : 0].id });
+      await methods.changeNetworkSelected({ id });
     }
   } else {
     // eslint-disable-next-line
@@ -114,18 +116,20 @@ const methods = {
     if (!state.network) {
       await this.initState();
     }
-
     await operateAutoLocked();
 
     const { network, wallet, walletBlob } = state;
     let accounts = null;
     if (wallet) {
       accounts = wallet.accounts.map(item => {
+        const filterNetwork = network.list.filter(networkItem => networkItem.key === item.network);
+        const { title, key } = filterNetwork[0] || network.list[0];
         return {
           id: item.id,
           account: item.account,
-          network: item.network,
           publicKey: item.publicKey,
+          networkTitle: title,
+          network: key,
         };
       });
     }

@@ -7,11 +7,11 @@
       <div class="form-items">
         <div class="form-item">
           <div class="item-title">{{ $t('password.title') }}</div>
-          <input type="password" v-model="password" :placeholder="$t('password.placeholder')" class="item-input" />
+          <input maxlength="20" type="password" v-model="password" :placeholder="$t('password.placeholder')" class="item-input" />
         </div>
         <div class="form-item">
           <div class="item-title">{{ $t('password.confirmTitle') }}</div>
-          <input type="password" v-model="confirmPassword" :placeholder="$t('password.repeatPassword')" class="item-input" />
+          <input maxlength="20" type="password" v-model="confirmPassword" :placeholder="$t('password.repeatPassword')" class="item-input" />
         </div>
       </div>
       <div class="buttons">

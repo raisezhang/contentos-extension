@@ -10,7 +10,8 @@
           <a v-if="item.canModify" @click="modifyNetwork(item.id)" class="icon icon-modify" v-tooltip="$t('common.modify')" href="javascript:;"></a>
           <a v-if="item.canModify" @click="deleteNetwork(item.id)" class="icon icon-delete" v-tooltip="$t('common.delete')" href="javascript:;"></a>
         </div>
-        <div class="list-item-content">{{ item.url }}</div>
+        <div class="list-item-content">Chain：{{ item.key }}</div>
+        <div class="list-item-content">RPC：{{ item.url }}</div>
       </div>
       <div @click="addNetwork" class="common-list-item item-add">{{ $t('components.addNetwork') }}</div>
     </div>
@@ -51,14 +52,10 @@ export default {
         confirmText: this.$t('common.confirm'),
         inputFields: [
           {
-            type: 'radio',
+            type: 'input',
             placeholder: this.$t('network.type'),
             name: 'key',
-            value: networkData.key || 'main',
-            values: [
-              { title: this.$t('network.main'), value: 'main' },
-              { title: this.$t('network.test'), value: 'test' },
-            ],
+            value: networkData.key || '',
           },
           {
             type: 'input',

@@ -80,6 +80,7 @@
 		"verifyPrivateKey": "Verify Private Key",
 		"enterUsernameTips": "Please enter your username",
 		"usernameRuleTips": "Username between 6 and 16 characters",
+		"usernameRuleCharsTips": "Username only lower letters and numbers are allowed.",
 		"usernameRepeat": "The username has been occupied",
 		"enterMnemonic": "Please enter your mnemonic",
 		"mnemonicNotMatch": "Mnemonic doesn't match",

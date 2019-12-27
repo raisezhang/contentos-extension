@@ -4,7 +4,7 @@
       <form @submit.prevent="goUnlock" action="#" method="post">
         <div class="form-items">
           <div class="form-item">
-            <input type="password" v-model="password" :placeholder="$t('lock.enterPassword')" class="item-input" />
+            <input maxlength="20" type="password" v-model="password" :placeholder="$t('lock.enterPassword')" class="item-input" />
           </div>
         </div>
         <div class="buttons">

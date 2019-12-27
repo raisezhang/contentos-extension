@@ -13,7 +13,7 @@
     <div class="form-items">
       <div class="form-item">
         <div class="item-title">{{ $t('import.enterYourName') }}</div>
-        <input spellcheck="false" v-model="username" :placeholder="$t('import.nameRule')" class="item-input" />
+        <input maxlength="16" spellcheck="false" v-model="username" :placeholder="$t('import.nameRule')" class="item-input" />
       </div>
       <div v-if="importTypeIndex == 0" class="form-item">
         <div class="item-title">{{ $t('import.enterYourMnemonic') }}</div>
@@ -56,6 +56,10 @@ export default {
       }
       if (this.username.length < 6 || this.username.length > 16) {
         this.toast(this.$t('create.usernameRuleTips'));
+        return;
+      }
+      if (!this.username.match(/^[0-9a-z]+$/)) {
+        this.toast(this.$t('create.usernameRuleCharsTips'));
         return;
       }
       if (this.importTypeIndex === 0) {

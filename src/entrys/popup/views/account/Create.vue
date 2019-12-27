@@ -3,7 +3,7 @@
     <div v-if="stepIndex == 0" class="steps-item steps-1">
       <div class="form-item">
         <div class="item-title">{{ $t('create.enterUsername') }}</div>
-        <input spellcheck="false" v-model="username" :placeholder="$t('create.userNameTips')" class="item-input" />
+        <input spellcheck="false" maxlength="16" v-model="username" :placeholder="$t('create.userNameTips')" class="item-input" />
         <div class="item-brief">{{ $t('create.userNameRule') }}</div>
       </div>
     </div>
@@ -87,6 +87,10 @@ export default {
         }
         if (this.username.length < 6 || this.username.length > 16) {
           this.toast(this.$t('create.usernameRuleTips'));
+          return;
+        }
+        if (!this.username.match(/^[0-9a-z]+$/)) {
+          this.toast(this.$t('create.usernameRuleCharsTips'));
           return;
         }
         this.startLoading();

@@ -7,7 +7,10 @@
       @click="changeAccount(item.id)"
       :class="`popover-item${index == $root.wallet.selected ? ' selected' : ''}`"
     >
-      <a href="javascript:;">{{ item.account }}</a>
+      <a href="javascript:;">
+        {{ item.account }}<span class="space-texts">{{ item.networkTitle }}</span
+        ><span :class="`network-type type-${item.network}`">{{ item.networkTitle }}</span>
+      </a>
     </div>
     <div class="popover-item item-space item-operate">
       <router-link to="/account/create">{{ $t('nav.createAccount') }}</router-link>
@@ -42,3 +45,35 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+.common-popover-list {
+  .popover-item {
+    .space-texts {
+      color: transparent;
+      user-select: none;
+      margin-right: -0.6rem;
+      font-size: 0.68rem;
+    }
+    .network-type {
+      font-size: 0.68rem;
+      padding: 0rem 0.6rem;
+      border: solid 1px @yellow-color;
+      color: @yellow-color;
+      border-radius: 2rem;
+      transform: translateY(-50%) scale(0.68);
+      display: inline-block;
+      position: absolute;
+      right: -0.6rem;
+      line-height: 1.4rem;
+      top: 50%;
+      pointer-events: none;
+      height: 1.4rem;
+      &.type-main {
+        color: @green-color;
+        border-color: @green-color;
+      }
+    }
+  }
+}
+</style>

@@ -22,6 +22,10 @@
           <div class="box-col">Stamina</div>
           <div class="box-col">{{ (balances[index] && balances[index].stamina) || '0' }}（{{ (balances[index] && balances[index].percent) || '0' }}% {{ $t('home.left') }}）</div>
         </div>
+        <div class="balance-item layout-box">
+          <div class="box-col">Network</div>
+          <div class="box-col">{{ item.networkTitle }}</div>
+        </div>
       </div>
     </div>
     <div class="common-list-item wallet-operate layout-box">
@@ -229,6 +233,9 @@ export default {
       .box-col:nth-child(1) {
         flex: 0.5;
       }
+    }
+    .network-type {
+      font-size: 0.64rem;
     }
     &.selected {
       .icon-copy {

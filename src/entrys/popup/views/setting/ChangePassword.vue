@@ -4,15 +4,15 @@
       <div class="form-items">
         <div class="form-item">
           <div class="item-title">{{ $t('changepassword.currentPassword') }}</div>
-          <input type="password" v-model="oldPassword" :placeholder="$t('changepassword.enterPassword')" class="item-input" />
+          <input maxlength="20" type="password" v-model="oldPassword" :placeholder="$t('changepassword.enterPassword')" class="item-input" />
         </div>
         <div class="form-item">
           <div class="item-title">{{ $t('changepassword.newPassword') }}</div>
-          <input type="password" v-model="newPassword" :placeholder="$t('password.placeholder')" class="item-input" />
+          <input maxlength="20" type="password" v-model="newPassword" :placeholder="$t('password.placeholder')" class="item-input" />
         </div>
         <div class="form-item">
           <div class="item-title">{{ $t('changepassword.confirmPassword') }}</div>
-          <input type="password" v-model="confirmPassword" :placeholder="$t('changepassword.repeatPassword')" class="item-input" />
+          <input maxlength="20" type="password" v-model="confirmPassword" :placeholder="$t('changepassword.repeatPassword')" class="item-input" />
         </div>
       </div>
       <div class="buttons">
