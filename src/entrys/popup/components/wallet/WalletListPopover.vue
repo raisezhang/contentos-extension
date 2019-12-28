@@ -58,8 +58,8 @@ export default {
     .network-type {
       font-size: 0.68rem;
       padding: 0rem 0.6rem;
-      border: solid 1px @yellow-color;
-      color: @yellow-color;
+      color: #fff;
+      background-color: @green-color;
       border-radius: 2rem;
       transform: translateY(-50%) scale(0.68);
       display: inline-block;
@@ -70,8 +70,7 @@ export default {
       pointer-events: none;
       height: 1.4rem;
       &.type-main {
-        color: @green-color;
-        border-color: @green-color;
+        background-color: @primary-color;
       }
     }
   }

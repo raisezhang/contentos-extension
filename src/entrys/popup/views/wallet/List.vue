@@ -96,7 +96,7 @@ export default {
     deleteAccount(id) {
       const filterList = this.$root.wallet.accounts.filter(item => item.id === id);
       if (filterList.length <= 0) {
-        this.toast('list.notFound');
+        this.toast(this.$t('list.notFound'));
         return;
       }
       const { account } = filterList[0];

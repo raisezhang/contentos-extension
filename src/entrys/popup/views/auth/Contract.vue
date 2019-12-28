@@ -75,7 +75,7 @@ export default {
     async detectContract() {
       const result = await isInDappWhiteList(this.domain, this.contract);
       if (result) {
-        this.toast('contract.whitelistTips1');
+        this.toast(this.$t('contract.whitelistTips1'));
         this.goSubmit();
       }
     },
