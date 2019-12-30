@@ -4,7 +4,7 @@
       <li v-for="(item, index) in dataList" :key="index" class="slide-item sitem-hide-icon sitem-hide-arrow">
         <a>
           {{ item.domain }}
-          <div>{{ $t('contract.contract') }}{{ item.contract }}</div>
+          <div>{{ $t('contract.title') }}{{ item.contract }}</div>
           <div>{{ $t('post.account') }}{{ item.account }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $t('whitelist.network') }}{{ item.network }}</div>
         </a>
         <span v-tooltip="$t('common.delete')" @click="deleteItem(item.id)" class="icon icon-delete">{{ $t('common.delete') }}</span>
