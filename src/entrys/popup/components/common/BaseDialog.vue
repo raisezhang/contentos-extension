@@ -28,8 +28,8 @@ export default {
 
 <style lang="less" scoped>
 .canvas {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100%;
+  min-width: 100%;
   top: 0;
   left: 0;
   z-index: 12;

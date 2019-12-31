@@ -86,7 +86,9 @@
 		"mnemonicNotMatch": "Mnemonic doesn't match",
 		"enterPrivateKey": "Please enter your private key",
 		"privateKeyNotMatch": "Private key doesn't match",
-		"createAccountFailed": "Create Account Failed"
+		"createAccountFailed": "Create Account Failed",
+		"reorderTips": "Please click on the mnemonics in order to verify that if your backup is correct.",
+		"incorrentMnemonic": "The mnemonic selected are incorrect！"
 	},
 	"import": {
 		"enterYourName": "Enter your username：",

@@ -86,7 +86,9 @@
 		"mnemonicNotMatch": "助记词不匹配",
 		"enterPrivateKey": "请输入私钥",
 		"privateKeyNotMatch": "私钥不匹配",
-    "createAccountFailed": "创建账户失败"
+		"createAccountFailed": "创建账户失败",
+		"reorderTips": "请按顺序点击助记词，以确认您备份正确：",
+		"incorrentMnemonic": "选择的助记词有误！"
 	},
 	"import": {
 		"enterYourName": "账户名称：",

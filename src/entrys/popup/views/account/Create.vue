@@ -11,7 +11,7 @@
       <div class="form-item">
         <div class="item-title">{{ $t('create.mnemonic') }}</div>
         <div class="item-textarea mnemonic-words">
-          <span v-for="(item, index) in formatMnemonic" :key="index" class="word-item"><template v-if="index != 0">&nbsp;</template>{{ item }}</span>
+          <span v-for="(item, index) in rightMnemonic" :key="index" class="word-item"><template v-if="index != 0">&nbsp;</template>{{ item }}</span>
         </div>
         <div class="item-brief">{{ $t('components.warnMnemonicTips') }}</div>
       </div>
@@ -33,8 +33,19 @@
         >
       </div>
       <div v-if="importTypeIndex == 0" class="form-item">
-        <div class="item-title">{{ $t('create.inputMnemonic') }}</div>
-        <textarea spellcheck="false" rows="4" :placeholder="$t('components.dontInputPublic')" class="item-textarea" v-model="confirmMnemonic"></textarea>
+        <div class="item-title">{{ $t('create.reorderTips') }}</div>
+        <div class="item-textarea mnemonic-words edit-mode">
+          <span v-for="(item, index) in confirmMnemonic" :key="index" class="word-item">{{ item }}</span>
+        </div>
+        <div class="item-textarea mnemonic-words edit-mode reorder-mnemonic">
+          <span
+            @click="confirmWorkItem(index, item)"
+            v-for="(item, index) in disorderMnemonic"
+            :key="index"
+            :class="`word-item${disorderMnemonicMap[index] ? ' item-disabled' : ''}`"
+            >{{ item }}</span
+          >
+        </div>
       </div>
       <div v-else class="form-item">
         <div class="item-title">{{ $t('create.inputPrivateKey') }}</div>
@@ -64,15 +75,13 @@ export default {
       stepIndex: 0,
       importTypes: [this.$t('create.verifyMnemonic'), this.$t('create.verifyPrivateKey')],
       importTypeIndex: 0,
-      confirmMnemonic: '',
+      disorderMnemonic: [],
+      disorderMnemonicMap: {},
+      confirmMnemonic: [],
+      rightMnemonic: [],
       confirmPrivateKey: '',
       operating: false,
     };
-  },
-  computed: {
-    formatMnemonic() {
-      return this.mnemonic.split(' ');
-    },
   },
   mixins: [MixinAccount],
   methods: {
@@ -106,6 +115,10 @@ export default {
         this.publicKey = publicKey;
         this.privateKey = privateKey;
         this.mnemonic = mnemonic;
+        this.rightMnemonic = mnemonic.split(/\s+/);
+        this.disorderMnemonic = [...this.rightMnemonic].sort(() => {
+          return Math.random() > 0.5 ? -1 : 1;
+        });
       }
       if (this.stepIndex < 2) {
         this.stepIndex = this.stepIndex + 1;
@@ -116,11 +129,11 @@ export default {
         return;
       }
       if (this.importTypeIndex === 0) {
-        if (!this.confirmMnemonic) {
+        if (this.confirmMnemonic.length <= 0) {
           this.toast(this.$t('create.enterMnemonic'));
           return;
         }
-        if (this.confirmMnemonic !== this.mnemonic) {
+        if (this.confirmMnemonic.join(' ') !== this.mnemonic) {
           this.toast(this.$t('create.mnemonicNotMatch'));
           return;
         }
@@ -165,6 +178,29 @@ export default {
         this.showErrorDialog(this.$t('components.warning'), this.$t('create.createAccountFailed'));
       }
     },
+    // revertWordItem(index) {
+    //   const key = `_${index}`;
+    //   const checkedIndex = this.disorderMnemonicMap[key];
+    //   if (checkedIndex < 0) {
+    //     return;
+    //   }
+    //   this.confirmMnemonic.splice(index, 1);
+    //   delete this.disorderMnemonicMap[key];
+    //   delete this.disorderMnemonicMap[checkedIndex];
+    // },
+    confirmWorkItem(index, keyword) {
+      if (this.disorderMnemonicMap[index]) {
+        return;
+      }
+      const confirmCount = this.confirmMnemonic.length;
+      if (this.rightMnemonic[confirmCount] !== keyword) {
+        this.toast(this.$t('create.incorrentMnemonic'));
+        return;
+      }
+      this.disorderMnemonicMap[index] = true;
+      // this.disorderMnemonicMap[`_${confirmCount}`] = index;
+      this.confirmMnemonic.push(keyword);
+    },
   },
 };
 </script>
@@ -180,18 +216,37 @@ export default {
     }
   }
   .mnemonic-words {
-    font-size: 0.7rem;
-    padding: 0.8rem 0.4rem 0.4rem 0.8rem;
+    font-size: 0.68rem;
+    padding: 0.8rem 0.3rem 0.4rem 0.8rem;
+    color: @red-color;
     .word-item {
+      letter-spacing: 0.4px;
       text-align: center;
       border: solid 1px @red-color;
       display: inline-block;
       border-radius: 0.28rem;
       background: rgba(255, 152, 0, 0.06);
-      padding: 0 0.3rem;
-      margin: 0 0.4rem 0.4rem 0;
-      height: 1.2rem;
-      line-height: 1.2rem;
+      padding: 0;
+      margin: 0 0.5rem 0.5rem 0;
+      height: 1.3rem;
+      line-height: 1.3rem;
+      white-space: nowrap;
+      box-sizing: border-box;
+      width: calc(25% - 0.5rem);
+    }
+    &.edit-mode {
+      min-height: 3.2rem;
+      .word-item {
+        cursor: pointer;
+        user-select: none;
+        &.item-disabled {
+          cursor: default;
+          opacity: 0.2;
+        }
+      }
+    }
+    &.reorder-mnemonic {
+      margin-top: 0.6rem;
     }
   }
   .steps-3 {
