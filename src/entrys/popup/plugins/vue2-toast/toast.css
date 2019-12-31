@@ -18,6 +18,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  pointer-events: none;
 }
 
 .lx-toast.lx-word-wrap {

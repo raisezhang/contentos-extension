@@ -37,14 +37,8 @@
         <div class="item-textarea mnemonic-words edit-mode">
           <span v-for="(item, index) in confirmMnemonic" :key="index" class="word-item">{{ item }}</span>
         </div>
-        <div class="item-textarea mnemonic-words edit-mode reorder-mnemonic">
-          <span
-            @click="confirmWorkItem(index, item)"
-            v-for="(item, index) in disorderMnemonic"
-            :key="index"
-            :class="`word-item${disorderMnemonicMap[index] ? ' item-disabled' : ''}`"
-            >{{ item }}</span
-          >
+        <div v-if="disorderMnemonic.length > 0" class="item-textarea mnemonic-words edit-mode reorder-mnemonic">
+          <span @click="confirmWorkItem(index, item)" v-for="(item, index) in disorderMnemonic" :key="index" class="word-item">{{ item }}</span>
         </div>
       </div>
       <div v-else class="form-item">
@@ -76,7 +70,6 @@ export default {
       importTypes: [this.$t('create.verifyMnemonic'), this.$t('create.verifyPrivateKey')],
       importTypeIndex: 0,
       disorderMnemonic: [],
-      disorderMnemonicMap: {},
       confirmMnemonic: [],
       rightMnemonic: [],
       confirmPrivateKey: '',
@@ -178,27 +171,12 @@ export default {
         this.showErrorDialog(this.$t('components.warning'), this.$t('create.createAccountFailed'));
       }
     },
-    // revertWordItem(index) {
-    //   const key = `_${index}`;
-    //   const checkedIndex = this.disorderMnemonicMap[key];
-    //   if (checkedIndex < 0) {
-    //     return;
-    //   }
-    //   this.confirmMnemonic.splice(index, 1);
-    //   delete this.disorderMnemonicMap[key];
-    //   delete this.disorderMnemonicMap[checkedIndex];
-    // },
     confirmWorkItem(index, keyword) {
-      if (this.disorderMnemonicMap[index]) {
-        return;
-      }
-      const confirmCount = this.confirmMnemonic.length;
-      if (this.rightMnemonic[confirmCount] !== keyword) {
+      if (this.rightMnemonic[this.confirmMnemonic.length] !== keyword) {
         this.toast(this.$t('create.incorrentMnemonic'));
         return;
       }
-      this.disorderMnemonicMap[index] = true;
-      // this.disorderMnemonicMap[`_${confirmCount}`] = index;
+      this.disorderMnemonic.splice(index, 1);
       this.confirmMnemonic.push(keyword);
     },
   },
@@ -239,10 +217,6 @@ export default {
       .word-item {
         cursor: pointer;
         user-select: none;
-        &.item-disabled {
-          cursor: default;
-          opacity: 0.2;
-        }
       }
     }
     &.reorder-mnemonic {
