@@ -135,13 +135,6 @@ export function isInDappWhiteList(domain, contract) {
 /**
  * Some API method in Cosjs SDK
  */
-export function addAccount(name, privateKey) {
-  return callBackend('addAccount', { name, privateKey });
-}
-
-export function generateKeysFromMnemonic(words) {
-  return callBackend('generateKeysFromMnemonic', { words });
-}
 
 export function generateKeysWithMonemonic() {
   return callBackend('generateKeysWithMonemonic');
@@ -167,32 +160,38 @@ export function blockProducerList(start = 0, limit = 100, lastBlockProducer = nu
   return callBackend('blockProducerList', { start, limit, lastBlockProducer });
 }
 
-export function createAccount(creator, newAccount, pubkey) {
-  return callBackend('createAccount', { creator, newAccount, pubkey });
-}
-
 export function transfer(sender, receiver, amount, memo, extra) {
   return callBackend('transfer', { ...extra, sender, receiver, amount, memo });
 }
 
-export function cosToVest(account, amount) {
-  return callBackend('cosToVest', { account, amount });
+export function cosToVest(account, amount, extra) {
+  return callBackend('cosToVest', { ...extra, account, amount });
 }
 
-export function vestToCos(account, amount) {
-  return callBackend('vestToCos', { account, amount });
+export function vestToCos(account, amount, extra) {
+  return callBackend('vestToCos', { ...extra, account, amount });
 }
 
-export function cosToStake(account, amount, toAccount) {
-  return callBackend('cosToStake', { account, amount, toAccount });
+export function cosToStake(account, amount, toAccount, extra) {
+  return callBackend('cosToStake', { ...extra, account, amount, toAccount });
 }
 
-export function stakeToCos(account, amount, toAccount) {
-  return callBackend('stakeToCos', { account, amount, toAccount });
+export function stakeToCos(account, amount, toAccount, extra) {
+  return callBackend('stakeToCos', { ...extra, account, amount, toAccount });
 }
 
 export function post(sender, title, content, tagsStr, extra) {
   return callBackend('post', { ...extra, sender, title, content, tagsStr });
+}
+
+// eslint-disable-next-line
+export function reply(sender, parent_uuid, content, extra) {
+  // eslint-disable-next-line
+  return callBackend('reply', { ...extra, sender, parent_uuid, content });
+}
+
+export function vote(sender, idx, extra) {
+  return callBackend('vote', { ...extra, sender, idx });
 }
 
 export function contractCall(caller, owner, contract, method, args, payment, extra) {

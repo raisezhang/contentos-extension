@@ -15,22 +15,6 @@ const state = {
   lockedTimestamp: undefined,
 };
 
-async function operateAutoLocked() {
-  const { lockTime, lockedTimestamp } = state;
-  if (!lockTime) {
-    return false;
-  }
-  const timestamp = Math.floor(new Date().getTime() / 1000);
-  if (!lockedTimestamp || lockTime + lockedTimestamp > timestamp) {
-    await StorageApi.setLockedTimestamp(timestamp);
-    state.lockedTimestamp = timestamp;
-    return false;
-  }
-  // eslint-disable-next-line
-  methods.logout();
-  return true;
-}
-
 async function decryptWallet(password, blob) {
   let wallet = null;
   try {
@@ -116,7 +100,7 @@ const methods = {
     if (!state.network) {
       await this.initState();
     }
-    await operateAutoLocked();
+    await this.operateAutoLocked();
 
     const { network, wallet, walletBlob } = state;
     let accounts = null;
@@ -298,7 +282,21 @@ const methods = {
   getLockTime() {
     return StorageApi.getLockTime();
   },
-
+  async operateAutoLocked() {
+    const { lockTime, lockedTimestamp } = state;
+    if (!lockTime) {
+      return false;
+    }
+    const timestamp = Math.floor(new Date().getTime() / 1000);
+    if (!lockedTimestamp || lockTime + lockedTimestamp > timestamp) {
+      await StorageApi.setLockedTimestamp(timestamp);
+      state.lockedTimestamp = timestamp;
+      return false;
+    }
+    // eslint-disable-next-line
+    this.logout();
+    return true;
+  },
   /**
    * Operate wallet
    */
@@ -527,6 +525,14 @@ const methods = {
   post({ sender, title, content, tagsStr }) {
     return state.cos.wallet.post(sender, title, content, tagsStr);
   },
+  // eslint-disable-next-line
+  reply({ sender, parent_uuid, content }) {
+    // eslint-disable-next-line
+    return state.cos.wallet.reply(sender, parent_uuid, content);
+  },
+  vote({ sender, idx }) {
+    return state.cos.wallet.vote(sender, idx);
+  },
   contractCall({ caller, owner, contract, method, args, payment }) {
     return state.cos.wallet.contractCall(caller, owner, contract, method, args, payment);
   },
@@ -558,22 +564,6 @@ const methods = {
 methods.initState();
 
 export default {
-  getState() {
-    return methods.getState();
-  },
-  getDefaultAccount() {
-    return methods.getDefaultAccount();
-  },
-  operateAutoLocked,
-  accountInfo(name) {
-    return methods.accountInfo({ name });
-  },
-  contractCall(params) {
-    return methods.contractCall(params);
-  },
-  isInDappWhiteList(params) {
-    return methods.isInDappWhiteList(params);
-  },
   handleMessage(action, data) {
     if (typeof methods[action] !== 'function') {
       return Promise.reject(new Error(`Unknown action ${action}`));

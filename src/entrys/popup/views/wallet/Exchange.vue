@@ -24,7 +24,7 @@
           </div>
         </template>
         <template v-else-if="exchangeType == 'vestToCos'">
-          <div class="form-item item-vestToCos">
+          <div class="form-item">
             <div class="item-title">
               {{ $t('transfer.amount') }}
               <div class="title-brief">{{ $t('exchange.vestBalance') }}{{ $root.userData.vest }} VEST</div>

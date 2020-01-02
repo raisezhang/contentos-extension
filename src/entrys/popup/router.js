@@ -15,9 +15,12 @@ import WalletHistory from './views/wallet/History';
 import WalletList from './views/wallet/List';
 
 import AuthTransfer from './views/auth/Transfer';
+import AuthExchange from './views/auth/Exchange';
 import AuthContract from './views/auth/Contract';
 import AuthPost from './views/auth/Post';
+import AuthReply from './views/auth/Reply';
 import AuthVote from './views/auth/Vote';
+import AuthVoteBp from './views/auth/VoteBp';
 import AuthSign from './views/auth/Sign';
 
 import Setting from './views/setting/Setting';
@@ -149,6 +152,15 @@ export default new Router({
       },
     },
     {
+      path: '/auth/exchange',
+      component: AuthExchange,
+      meta: {
+        title: 'nav.exchangeConfirm',
+        headerType: HeaderTypes.title,
+        requireAuth: true,
+      },
+    },
+    {
       path: '/auth/contract',
       component: AuthContract,
       meta: {
@@ -167,10 +179,28 @@ export default new Router({
       },
     },
     {
+      path: '/auth/reply',
+      component: AuthReply,
+      meta: {
+        title: 'nav.replyConfirm',
+        headerType: HeaderTypes.title,
+        requireAuth: true,
+      },
+    },
+    {
       path: '/auth/vote',
       component: AuthVote,
       meta: {
         title: 'nav.voteConfirm',
+        headerType: HeaderTypes.title,
+        requireAuth: true,
+      },
+    },
+    {
+      path: '/auth/vote-bp',
+      component: AuthVoteBp,
+      meta: {
+        title: 'nav.voteBpConfirm',
         headerType: HeaderTypes.title,
         requireAuth: true,
       },

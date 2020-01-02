@@ -41,8 +41,11 @@
 		"history": "History",
 		"accountList": "Account List",
 		"transferConfirm": "Transfer Confirm",
+		"exchangeConfirm": "Exchange Confirm",
 		"contractConfirm": "Contract Confirm",
 		"postConfirm": "Post Confirm",
+		"replyConfirm": "Reply Confirm",
+		"voteBpConfirm": "Bp Vote Confirm",
 		"voteConfirm": "Vote Confirm",
 		"signMessage": "Sign Message",
 		"network": "Network",
@@ -134,6 +137,10 @@
 		"content": "Content：",
 		"tags": "Tags："
 	},
+	"reply": {
+		"identity": "Target：",
+		"content": "Content："
+	},
 	"sign": {
 		"message": "Message："
 	},
@@ -152,7 +159,8 @@
 		"bpName": "Bp Name：",
 		"operate": "Operate：",
 		"cancelVote": "Cancel Vote",
-		"title": "Vote"
+		"title": "Vote",
+		"identity": "Target："
 	},
 	"aboutus": {
 		"links": "Links",

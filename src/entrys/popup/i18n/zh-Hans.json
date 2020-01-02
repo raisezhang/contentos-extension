@@ -41,8 +41,11 @@
 		"history": "记录",
 		"accountList": "账户列表",
 		"transferConfirm": "转账确认",
+		"exchangeConfirm": "转换确认",
 		"contractConfirm": "合约确认",
 		"postConfirm": "发布确认",
+		"replyConfirm": "评论确认",
+		"voteBpConfirm": "Bp 投票确认",
 		"voteConfirm": "投票确认",
 		"signMessage": "签名",
 		"network": "网络",
@@ -134,6 +137,10 @@
 		"content": "内容：",
 		"tags": "标签："
 	},
+	"reply": {
+		"identity": "评论对象：",
+		"content": "评论内容："
+	},
 	"sign": {
 		"message": "内容："
 	},
@@ -152,7 +159,8 @@
 		"bpName": "Bp 名称：",
 		"operate": "操作：",
 		"cancelVote": "取消投票",
-		"title": "投票"
+		"title": "投票",
+		"identity": "投票对象："
 	},
 	"aboutus": {
 		"links": "链接",
@@ -210,7 +218,7 @@
 		"test": "测试网",
 		"title": "网络标题",
 		"rpcAddress": "RPC 地址",
-		"titleTips": "请输入网络挑剔",
+		"titleTips": "请输入网络标题",
 		"rpcTips": "请输入RPC地址",
 		"duplication": "网络标题重复"
 	},

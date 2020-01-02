@@ -6,8 +6,11 @@ const PAGE_PATHS = {
   lock: '/account/lock',
   transfer: '/auth/transfer',
   contract: '/auth/contract',
+  exchange: '/auth/exchange',
   post: '/auth/post',
+  reply: '/auth/reply',
   vote: '/auth/vote',
+  voteBp: '/auth/vote-bp',
   signMessage: '/auth/sign',
 };
 
@@ -33,19 +36,19 @@ function openWindow(type, actionId, config) {
   });
 }
 
-function detectAutoLocked() {
-  return WalletApi.operateAutoLocked();
+function callWalletApi(action, data) {
+  return WalletApi.handleMessage(action, data);
 }
 
 const methods = {
   async getDefaultAccount({ actionId }) {
-    const defaultAccount = await WalletApi.getDefaultAccount();
+    const defaultAccount = await callWalletApi('getDefaultAccount');
     const { account, locked, walletCreated } = defaultAccount;
     if (!walletCreated) {
       openWindow('welcome', actionId);
       return defaultAccount;
     }
-    const isAutoLocked = await detectAutoLocked();
+    const isAutoLocked = await callWalletApi('operateAutoLocked');
     if (locked || isAutoLocked) {
       mergeContentParams(actionId, { getDefaultAccount: 1 });
       const data = await openWindow('lock', actionId);
@@ -86,9 +89,9 @@ const methods = {
     if (!method) {
       throw new Error('method is required.');
     }
-    const isWhiteList = await WalletApi.isInDappWhiteList({ domain, contract });
+    const isWhiteList = await callWalletApi('isInDappWhiteList', { domain, contract });
     if (isWhiteList) {
-      const result = await WalletApi.contractCall({ caller, owner, contract, method, args, payment });
+      const result = await callWalletApi('contractCall', { caller, owner, contract, method, args, payment });
       return result;
     }
     const data = await openWindow('contract', actionId);
@@ -107,6 +110,31 @@ const methods = {
     const data = await openWindow('post', actionId);
     return data;
   },
+  // eslint-disable-next-line
+  async reply({ sender, parent_uuid, content, actionId }) {
+    if (!sender) {
+      throw new Error('sender is required.');
+    }
+    // eslint-disable-next-line
+    if (!parent_uuid) {
+      throw new Error('parent_uuid is required.');
+    }
+    if (!content) {
+      throw new Error('content is required.');
+    }
+    const data = await openWindow('reply', actionId);
+    return data;
+  },
+  async vote({ sender, idx, actionId }) {
+    if (!sender) {
+      throw new Error('sender is required.');
+    }
+    if (!idx) {
+      throw new Error('idx is required.');
+    }
+    const data = await openWindow('vote', actionId);
+    return data;
+  },
   async voteToBlockProducer({ voterValue, bpValue, cancel, actionId }) {
     if (!voterValue) {
       throw new Error('voterValue is required.');
@@ -117,7 +145,7 @@ const methods = {
     if (typeof cancel !== 'boolean') {
       throw new Error('cancel is invalid.');
     }
-    const data = await openWindow('vote', actionId);
+    const data = await openWindow('voteBp', actionId);
     return data;
   },
   async signMessage({ account, message, actionId }) {
@@ -131,7 +159,76 @@ const methods = {
     return data;
   },
   async accountInfo({ name }) {
-    const data = await WalletApi.accountInfo(name);
+    if (!name) {
+      throw new Error('name is required.');
+    }
+    const data = await callWalletApi('accountInfo', { name });
+    return data;
+  },
+  async cosToVest({ account, amount, actionId }) {
+    if (!account) {
+      throw new Error('account is required.');
+    }
+    if (!amount) {
+      throw new Error('amount is required.');
+    }
+    const fmtAmount = parseFloat(amount, 10);
+    if (fmtAmount <= 0) {
+      throw new Error('amount is invalid.');
+    }
+    mergeContentParams(actionId, { exchangeType: 'cosToVest' });
+    const data = await openWindow('exchange', actionId);
+    return data;
+  },
+  async vestToCos({ account, amount, actionId }) {
+    if (!account) {
+      throw new Error('account is required.');
+    }
+    if (!amount) {
+      throw new Error('amount is required.');
+    }
+    const fmtAmount = parseFloat(amount, 10);
+    if (fmtAmount <= 0) {
+      throw new Error('amount is invalid.');
+    }
+    mergeContentParams(actionId, { exchangeType: 'vestToCos' });
+    const data = await openWindow('exchange', actionId);
+    return data;
+  },
+  async cosToStake({ account, amount, toAccount, actionId }) {
+    if (!account) {
+      throw new Error('account is required.');
+    }
+    if (!amount) {
+      throw new Error('amount is required.');
+    }
+    if (!toAccount) {
+      throw new Error('toAccount is required.');
+    }
+    const fmtAmount = parseFloat(amount, 10);
+    if (fmtAmount <= 0) {
+      throw new Error('amount is invalid.');
+    }
+    mergeContentParams(actionId, { exchangeType: 'cosToStake' });
+    const data = await openWindow('exchange', actionId);
+    return data;
+  },
+  async stakeToCos({ account, amount, toAccount, actionId }) {
+    if (!account) {
+      throw new Error('account is required.');
+    }
+    if (!amount) {
+      throw new Error('amount is required.');
+    }
+    if (!toAccount) {
+      throw new Error('toAccount is required.');
+    }
+    const fmtAmount = parseFloat(amount, 10);
+    if (fmtAmount <= 0) {
+      throw new Error('amount is invalid.');
+    }
+    mergeContentParams(actionId, { exchangeType: 'stakeToCos' });
+    const data = await openWindow('exchange', actionId);
     return data;
   },
 };

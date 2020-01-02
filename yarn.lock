@@ -693,10 +693,10 @@
   dependencies:
     qrcode "^1.3.3"
 
-"@coschain/cosjs@^1.2.3":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@coschain/cosjs/-/cosjs-1.2.5.tgz#78053d7d8da4ebf41206a3c52d1f806c981f415c"
-  integrity sha512-cCx9wcdfLauA9T0qhwa5OcHYNuJk5qM2Oh/N8qtDa2F1No+PA9Z+8f77rRZxJY0eXpY7RiAYH0FTaajjn3bWNQ==
+"@coschain/cosjs@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@coschain/cosjs/-/cosjs-1.2.6.tgz#32513deea3355f3b25f0a0927e52fe0e1c1c86ab"
+  integrity sha512-VLH7Olx1I9A16+4qrU7w960cb7Ys5QpPOtzOFTiAJSZwOiDvyK9ULnLRtJYt+Hzs8lQJcaAGv2e0A7pRMo/HVA==
   dependencies:
     "@babel/polyfill" "^7.6.0"
     "@improbable-eng/grpc-web" "^0.11.0"

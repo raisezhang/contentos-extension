@@ -2,12 +2,16 @@
   <div class="auth-preview-page">
     <div class="form-items">
       <div class="form-item form-item-preview">
-        <div class="item-title">{{ $t('vote.voter') }}</div>
-        <div class="item-input">{{ sender }}</div>
+        <div class="item-title">{{ $t('post.account') }}</div>
+        <div class="item-textarea">{{ sender }}</div>
       </div>
       <div class="form-item form-item-preview">
-        <div class="item-title">{{ $t('vote.identity') }}</div>
-        <div class="item-input">{{ idx }}</div>
+        <div class="item-title">{{ $t('reply.identity') }}</div>
+        <div class="item-textarea">{{ parent_uuid }}</div>
+      </div>
+      <div class="form-item form-item-preview">
+        <div class="item-title">{{ $t('reply.content') }}</div>
+        <div class="item-textarea">{{ fmtContent }}</div>
       </div>
     </div>
     <div class="buttons">
@@ -17,22 +21,28 @@
   </div>
 </template>
 <script>
-import { vote } from '../../service/WalletApi';
+import { reply } from '../../service/WalletApi';
 import MixinAccount from '../../plugins/MixinAccount';
 
 export default {
   data() {
     return {
       sender: '',
-      idx: '',
+      parent_uuid: '',
+      content: '',
+      fmtContent: '',
       operating: false,
     };
   },
   created() {
     this.restoreContentParams();
-    const { sender, idx } = this.contentParams;
+    // eslint-disable-next-line
+    const { sender, parent_uuid, content } = this.contentParams;
     this.sender = sender;
-    this.idx = idx;
+    // eslint-disable-next-line
+    this.parent_uuid = parent_uuid;
+    this.content = content;
+    this.fmtContent = content.length > 200 ? `${content.slice(0, 200)}...` : content;
   },
   mixins: [MixinAccount],
   methods: {
@@ -43,7 +53,7 @@ export default {
       this.operating = true;
       this.startLoading(true);
       try {
-        await vote(this.sender, this.idx, { actionId: this.actionId });
+        await reply(this.sender, this.parent_uuid, this.content, { actionId: this.actionId });
       } catch (error) {
         // TODO
       }

@@ -70,6 +70,26 @@ const WalletApi = {
   post(sender, title, content, tagsStr) {
     return wrapperPromise('post', { sender, title, content, tagsStr });
   },
+  // eslint-disable-next-line
+  reply(sender, parent_uuid, content) {
+    // eslint-disable-next-line
+    return wrapperPromise('reply', { sender, parent_uuid, content });
+  },
+  vote(sender, idx) {
+    return wrapperPromise('vote', { sender, idx });
+  },
+  cosToVest(account, amount) {
+    return wrapperPromise('cosToVest', { account, amount });
+  },
+  vestToCos(account, amount) {
+    return wrapperPromise('vestToCos', { account, amount });
+  },
+  cosToStake(account, amount, toAccount) {
+    return wrapperPromise('cosToStake', { account, amount, toAccount });
+  },
+  stakeToCos(account, amount, toAccount) {
+    return wrapperPromise('stakeToCos', { account, amount, toAccount });
+  },
   signMessage(account, message) {
     return wrapperPromise('signMessage', { account, message });
   },

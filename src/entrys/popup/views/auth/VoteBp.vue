@@ -3,11 +3,15 @@
     <div class="form-items">
       <div class="form-item form-item-preview">
         <div class="item-title">{{ $t('vote.voter') }}</div>
-        <div class="item-input">{{ sender }}</div>
+        <div class="item-input">{{ voterValue }}</div>
       </div>
       <div class="form-item form-item-preview">
-        <div class="item-title">{{ $t('vote.identity') }}</div>
-        <div class="item-input">{{ idx }}</div>
+        <div class="item-title">{{ $t('vote.bpName') }}</div>
+        <div class="item-input">{{ bpValue }}</div>
+      </div>
+      <div class="form-item form-item-preview">
+        <div class="item-title">{{ $t('vote.operate') }}</div>
+        <div class="item-input">{{ cancel ? $t('vote.cancelVote') : $t('vote.title') }}</div>
       </div>
     </div>
     <div class="buttons">
@@ -17,22 +21,24 @@
   </div>
 </template>
 <script>
-import { vote } from '../../service/WalletApi';
+import { voteToBlockProducer } from '../../service/WalletApi';
 import MixinAccount from '../../plugins/MixinAccount';
 
 export default {
   data() {
     return {
-      sender: '',
-      idx: '',
+      voterValue: '',
+      bpValue: '',
+      cancel: false,
       operating: false,
     };
   },
   created() {
     this.restoreContentParams();
-    const { sender, idx } = this.contentParams;
-    this.sender = sender;
-    this.idx = idx;
+    const { voterValue, bpValue, cancel } = this.contentParams;
+    this.voterValue = voterValue;
+    this.bpValue = bpValue;
+    this.cancel = cancel;
   },
   mixins: [MixinAccount],
   methods: {
@@ -43,7 +49,7 @@ export default {
       this.operating = true;
       this.startLoading(true);
       try {
-        await vote(this.sender, this.idx, { actionId: this.actionId });
+        await voteToBlockProducer(this.voterValue, this.bpValue, this.cancel, { actionId: this.actionId });
       } catch (error) {
         // TODO
       }
