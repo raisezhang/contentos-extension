@@ -214,12 +214,19 @@ export default {
     }
     &.edit-mode {
       min-height: 3.2rem;
+    }
+    &.reorder-mnemonic {
       .word-item {
         cursor: pointer;
         user-select: none;
+        transition: background-color ease 0.2s;
+        &:hover {
+          background-color: rgba(255, 152, 0, 0.15);
+        }
+        &:active {
+          background-color: rgba(255, 152, 0, 0.3);
+        }
       }
-    }
-    &.reorder-mnemonic {
       margin-top: 0.6rem;
     }
   }
