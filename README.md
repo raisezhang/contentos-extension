@@ -31,7 +31,7 @@ Interface provided to dApp developers:
 
 - [Dapp example on CodePen](https://codepen.io/raisezhang/full/oNgWMLB/)
 - [How does dApp access contentos-extension](https://github.com/raisezhang/contentos-extension/blob/master/docs/how-to-access-wallet-in-dapp.md)
-- [How to sign and verify message](https://github.com/raisezhang/contentos-extension/blob/master/docs/how-to-access-wallet-in-dapp.md)
+- [How to sign and verify message](https://github.com/raisezhang/contentos-extension/blob/master/docs/how-to-sign-and-verify-message.md)
 - [How is the client wallet compatible with the protocol of contenos-extension](https://github.com/raisezhang/contentos-extension/blob/master/docs/how-is-the-client-wallet-compatible.md)
 
 ## 🛠️ Build
