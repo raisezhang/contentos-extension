@@ -1,37 +1,68 @@
-## Welcome to GitHub Pages
+# contentos-extension
 
-You can use the [editor on GitHub](https://github.com/raisezhang/contentos-extension/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A Contentos Wallet in your Browser
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## ✨ Introduction
 
-### Markdown
+Main functions of wallet:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Create and import wallet, support mnemonic and private key import, support multiple accounts
+- Switch wallet network and add custom network
+- Support transfer and mutual exchange of COS to VEST / Chicken
+- Vote for BP, cancel voting
+- View recent transactions
+- Set wallet automatic lock time flexibly
 
-```markdown
-Syntax highlighted code block
+Interface provided to dApp developers:
 
-# Header 1
-## Header 2
-### Header 3
+- Get current account information
+- Transfer and exchange COS to VEST / Chicken through interface
+- Vote for BP, cancel voting
+- Execute contract, add contract to white list
+- Post content, comment, like
+- Sign message
 
-- Bulleted
-- List
+## 📦 Downloads
 
-1. Numbered
-2. List
+- [Download from Chrome Store](https://www.contentos.io/)
+- [Download zip file](https://github.com/raisezhang/contentos-extension/releases)
 
-**Bold** and _Italic_ and `Code` text
+## 📖 Docs
 
-[Link](url) and ![Image](src)
-```
+- [Dapp example on CodePen](https://codepen.io/raisezhang/full/oNgWMLB/)
+- [How does dApp access contentos-extension](https://www.contentos.io/)
+- [How to sign and verify message](https://www.contentos.io/)
+- [How is the client wallet compatible with the protocol of contenos-extension](https://www.contentos.io/)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## 🛠️ Build
 
-### Jekyll Themes
+- Install
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/raisezhang/contentos-extension/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  ``` bash
+  $ git clone git@github.com:raisezhang/contentos-extension.git
+  $ cd contentos-extension
+  $ yarn install # or npm install
+  ```
 
-### Support or Contact
+- Development
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+  ``` bash
+  $ yarn watch:dev
+  ```
+
+- Production
+
+  ``` bash
+  $ yarn build
+  $ yarn build-zip # package the build files
+  ```
+
+## 🔗 Links
+
+- [Offical Website](https://www.contentos.io/)
+- [Contentos Js SDK](https://github.com/coschain/cosjs/)
+- [Explorer](https://explorer.contentos.io/)
+
+## 🔑 License
+
+contentos-extension is released under the MIT license.
