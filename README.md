@@ -24,7 +24,7 @@ Interface provided to dApp developers:
 
 ## 📦 Downloads
 
-- [Download from Chrome Store](https://www.contentos.io/)
+- [Download from Chrome Store](https://chrome.google.com/webstore/detail/contentos-wallet/fdlphmindllconhbcmlpdiildicodcjm)
 - [Download zip file](https://github.com/raisezhang/contentos-extension/releases)
 
 ## 📖 Docs
