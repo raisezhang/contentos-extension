@@ -23,7 +23,7 @@
     "@carpenter/vue-tencent-captcha": "^0.2.0",
     "@chenfengyuan/vue-qrcode": "^1.0.1",
     "@coschain/cosjs": "^1.2.6",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "cos-grpc-js": "^1.5.10",
     "bs58": "^4.0.1",
     "v-tooltip": "^2.0.2",
